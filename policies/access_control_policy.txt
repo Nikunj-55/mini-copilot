@@ -1,0 +1,39 @@
+ACCESS CONTROL POLICY
+Version: 2.1 | Effective Date: January 1, 2025
+
+1. PURPOSE
+This policy establishes standards for controlling access to company systems, applications,
+and data to protect against unauthorized access and data breaches.
+
+2. SCOPE
+Applies to all employees, contractors, and third-party vendors who access company systems.
+
+3. MULTI-FACTOR AUTHENTICATION (MFA)
+3.1 MFA is MANDATORY for all user accounts, especially administrative and privileged accounts.
+3.2 MFA must be enforced for all remote access (VPN, cloud services, SaaS applications).
+3.3 Exception requests must be approved by the CISO in writing and reviewed quarterly.
+3.4 Accounts without MFA enabled are considered a HIGH-RISK compliance violation.
+
+4. LEAST PRIVILEGE PRINCIPLE
+4.1 Users must only have access permissions necessary to perform their job function.
+4.2 Privileged access (admin rights) must be reviewed and re-certified every 90 days.
+4.3 Access rights must be revoked within 24 hours of employee termination.
+4.4 Shared accounts are strictly prohibited for all systems classified as confidential or above.
+
+5. PASSWORD POLICY
+5.1 Passwords must be at least 14 characters in length.
+5.2 Passwords must include uppercase, lowercase, numeric, and special characters.
+5.3 Password reuse is not permitted for the last 12 passwords.
+5.4 Passwords must be changed every 90 days for privileged accounts.
+5.5 Default vendor passwords must be changed immediately upon deployment.
+
+6. ACCOUNT MANAGEMENT
+6.1 All accounts must be reviewed for necessity quarterly.
+6.2 Dormant accounts (inactive for 60+ days) must be disabled immediately.
+6.3 Service accounts must use non-expiring passwords only when documented and approved.
+6.4 All account creation and deletion events must be logged and auditable.
+
+7. COMPLIANCE & ENFORCEMENT
+7.1 Violations of this policy may result in disciplinary action up to and including termination.
+7.2 Automated monitoring tools must be deployed to detect access policy violations.
+7.3 Annual access control audits are required across all critical systems.

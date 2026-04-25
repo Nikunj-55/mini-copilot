@@ -1,0 +1,49 @@
+INCIDENT RESPONSE POLICY
+Version: 3.0 | Effective Date: February 1, 2025
+
+1. PURPOSE
+This policy establishes procedures for detecting, reporting, assessing, responding to,
+and recovering from information security incidents to minimize business impact.
+
+2. SCOPE
+Applies to all employees, contractors, and vendors who operate or support company systems.
+
+3. INCIDENT CLASSIFICATION
+3.1 SEVERITY 1 (CRITICAL): Data breach, ransomware, critical system compromise. Response: Immediate.
+3.2 SEVERITY 2 (HIGH): Unauthorized access to sensitive systems, malware detection. Response: Within 1 hour.
+3.3 SEVERITY 3 (MEDIUM): Phishing attacks, policy violations, failed intrusion attempts. Response: Within 4 hours.
+3.4 SEVERITY 4 (LOW): Minor security events, informational alerts. Response: Within 24 hours.
+
+4. DETECTION & REPORTING
+4.1 All employees must report suspected security incidents to security@company.com immediately.
+4.2 Security monitoring tools must be deployed to detect anomalous activity 24/7.
+4.3 Failure to report a known incident within the required timeframe is a HIGH-RISK violation.
+4.4 Anonymous reporting channels must be available and protected from retaliation.
+
+5. RESPONSE PROCEDURES
+5.1 CONTAINMENT: Isolate affected systems to prevent spread within 30 minutes of detection.
+5.2 ERADICATION: Remove threat actors, malware, or vulnerabilities from all affected systems.
+5.3 RECOVERY: Restore systems from verified clean backups only after eradication is confirmed.
+5.4 System restoration without eradication confirmation is a HIGH-RISK compliance violation.
+
+6. PATCH MANAGEMENT
+6.1 Critical security patches must be applied within 72 hours of vendor release.
+6.2 High-severity patches must be applied within 30 days.
+6.3 Systems running unpatched critical vulnerabilities are classified as HIGH-RISK.
+6.4 Exceptions require written CISO approval and must include a compensating control plan.
+6.5 Monthly vulnerability scans are mandatory across all internet-facing systems.
+
+7. BACKUP & RECOVERY
+7.1 Critical systems must be backed up daily with a Recovery Time Objective (RTO) of 4 hours.
+7.2 Backup integrity must be tested monthly through restoration drills.
+7.3 Backup media must be stored in a geographically separate location from primary systems.
+7.4 Systems without tested backups in the last 90 days are a MEDIUM compliance risk.
+
+8. POST-INCIDENT REVIEW
+8.1 A Post-Incident Report (PIR) must be completed within 5 business days of incident resolution.
+8.2 Root cause analysis must identify contributing factors and preventive measures.
+8.3 Lessons learned must be shared with relevant teams and control owners.
+
+9. REGULATORY NOTIFICATION
+9.1 Data breaches affecting personal data must be reported to regulators within 72 hours (GDPR).
+9.2 Legal counsel must be engaged for all Severity 1 and Severity 2 incidents.
