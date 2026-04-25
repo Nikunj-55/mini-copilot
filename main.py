@@ -4,6 +4,7 @@ from pydantic import BaseModel
 from typing import Dict, Any, Optional, List
 from app.modules.decision_agent import DecisionAgent
 from app.modules.policy_analyzer import PolicyAnalyzer
+from app.modules.risk_agent import RiskAgent
 
 app = FastAPI(title="Mini Compliance Copilot API")
 
@@ -19,6 +20,7 @@ app.add_middleware(
 # Initialize modules
 agent = DecisionAgent()
 analyzer = PolicyAnalyzer()  # loads + indexes policies at startup
+risk_agent = RiskAgent()
 
 class ComplianceRequest(BaseModel):
     risk_analysis: Dict[str, Any]
@@ -27,6 +29,10 @@ class ComplianceRequest(BaseModel):
 class PolicyQuery(BaseModel):
     query: str
     top_k: int = 3
+# Risk Request Model
+class RiskRequest(BaseModel):
+    policy: str
+    context: str
 
 @app.get("/")
 async def root():
@@ -62,3 +68,15 @@ async def policy_analyze(request: PolicyQuery):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
+# API Endpoint for Risk Analysis
+@app.post("/api/risk")
+async def analyze_risk(request: RiskRequest):
+    try:
+        result = risk_agent.analyze({
+            "policy": request.policy,
+            "context": request.context
+        })
+        return result
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
