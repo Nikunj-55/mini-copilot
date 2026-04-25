@@ -1,0 +1,45 @@
+DATA RETENTION POLICY
+Version: 1.4 | Effective Date: March 15, 2025
+
+1. PURPOSE
+This policy defines how the company retains, archives, and disposes of data to meet
+regulatory obligations, reduce liability, and protect sensitive information.
+
+2. SCOPE
+Applies to all data types across all departments including HR, Finance, Legal,
+Technical, and Customer data, whether stored on-premises or in cloud environments.
+
+3. RETENTION SCHEDULES
+3.1 Customer Personal Data: Retained for the duration of the business relationship plus 3 years.
+3.2 Financial Records: Retained for 7 years in accordance with tax and accounting regulations.
+3.3 Employee Records: Retained for 7 years after termination of employment.
+3.4 Contracts and Legal Documents: Retained for 10 years after expiration.
+3.5 System Logs and Audit Trails: Retained for a minimum of 1 year, preferably 3 years.
+3.6 Security Incident Records: Retained for 5 years.
+
+4. DATA CLASSIFICATION
+4.1 CONFIDENTIAL: Includes PII, financial records, health data. Encrypted at rest and in transit.
+4.2 INTERNAL: Business operations data. Access limited to employees.
+4.3 PUBLIC: Marketing materials and publicly available information.
+
+5. DATA ENCRYPTION
+5.1 All confidential data must be encrypted using AES-256 or equivalent at rest.
+5.2 Data in transit must use TLS 1.2 or higher.
+5.3 Encryption keys must be rotated annually and stored in a secure key management system.
+5.4 Unencrypted storage of customer PII is a HIGH-RISK compliance violation.
+
+6. DATA DISPOSAL
+6.1 Data past its retention period must be securely deleted using DoD 5220.22-M standard.
+6.2 Physical media must be shredded or degaussed before disposal.
+6.3 All data disposal events must be documented with date, method, and authorizing person.
+6.4 Cloud data deletion must include verification from the cloud provider.
+6.5 Improper data disposal without documented approval is a MEDIUM to HIGH compliance risk.
+
+7. DATA BREACH PROTOCOL
+7.1 All suspected data breaches must be reported to the Security Team within 1 hour of discovery.
+7.2 Regulatory notification (e.g., GDPR, CCPA) must occur within required legal timeframes.
+7.3 Post-breach reviews must be conducted within 30 days.
+
+8. COMPLIANCE
+8.1 Annual audits must verify adherence to retention schedules.
+8.2 Violations may result in disciplinary action and regulatory penalties.

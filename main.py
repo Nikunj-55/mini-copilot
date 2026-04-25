@@ -1,8 +1,9 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from typing import Dict, Any, Optional
+from typing import Dict, Any, Optional, List
 from app.modules.decision_agent import DecisionAgent
+from app.modules.policy_analyzer import PolicyAnalyzer
 
 app = FastAPI(title="Mini Compliance Copilot API")
 
@@ -15,12 +16,17 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Initialize the Agent
+# Initialize modules
 agent = DecisionAgent()
+analyzer = PolicyAnalyzer()  # loads + indexes policies at startup
 
 class ComplianceRequest(BaseModel):
     risk_analysis: Dict[str, Any]
     policy_context: Optional[str] = None
+
+class PolicyQuery(BaseModel):
+    query: str
+    top_k: int = 3
 
 @app.get("/")
 async def root():
@@ -34,6 +40,22 @@ async def get_decision(request: ComplianceRequest):
             policy_context=request.policy_context
         )
         return result
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+# -----------------------------------------------------------------
+# Policy Analyzer endpoint (Member 1 — RAG)
+# -----------------------------------------------------------------
+@app.post("/api/policy-analyze")
+async def policy_analyze(request: PolicyQuery):
+    """
+    RAG retrieval endpoint.
+    POST { "query": "...", "top_k": 3 }
+    Returns list of { policy, context, score } objects.
+    """
+    try:
+        results = analyzer.retrieve(request.query, top_k=request.top_k)
+        return {"query": request.query, "results": results}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 

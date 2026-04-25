@@ -3,3 +3,6 @@ fastapi
 uvicorn
 anthropic
 python-dotenv
+sentence-transformers
+faiss-cpu
+numpy
